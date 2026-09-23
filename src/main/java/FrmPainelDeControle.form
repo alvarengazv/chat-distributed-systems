@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="FrmPainelDeControle">
+  <grid id="27dc6" binding="contentPane" layout-manager="GridLayoutManager" row-count="23" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="861" height="616"/>
+    </constraints>
+    <properties>
+      <minimumSize width="400" height="300"/>
+      <toolTipText value=""/>
+    </properties>
+    <border type="none" title=""/>
+    <children>
+      <component id="7b8a7" class="javax.swing.JLabel" binding="lblSrvWeb">
+        <constraints>
+          <grid row="7" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <text value="Serviço Web:"/>
+          <verticalAlignment value="3"/>
+          <verticalTextPosition value="3"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="b02a2" class="javax.swing.JToggleButton" binding="btnAtivarDesktop">
+        <constraints>
+          <grid row="2" column="2" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <label value="ATIVAR"/>
+          <text value="ATIVAR"/>
+        </properties>
+      </component>
+      <component id="aaeb0" class="javax.swing.JLabel" binding="lblSrvDesktopLegenda">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-65536"/>
+          <text value="Inspirado no Whatsapp Desktop"/>
+          <verticalAlignment value="1"/>
+          <verticalTextPosition value="1"/>
+        </properties>
+      </component>
+      <component id="40e8a" class="javax.swing.JToggleButton" binding="btnAtivarWeb">
+        <constraints>
+          <grid row="7" column="2" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <label value="ATIVAR"/>
+          <text value="ATIVAR"/>
+        </properties>
+      </component>
+      <component id="4f944" class="javax.swing.JLabel" binding="lblSrvWebLegenda">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-65536"/>
+          <text value="Inspirado no Whatsapp Web"/>
+          <verticalAlignment value="1"/>
+          <verticalTextPosition value="1"/>
+        </properties>
+      </component>
+      <component id="d944" class="javax.swing.JLabel" binding="lblSrvTerceiros">
+        <constraints>
+          <grid row="12" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <text value="Serviço Terceiros:"/>
+          <verticalAlignment value="3"/>
+          <verticalTextPosition value="3"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="39556" class="javax.swing.JToggleButton" binding="btnAtivarTerceiros">
+        <constraints>
+          <grid row="12" column="2" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <label value="ATIVAR"/>
+          <text value="ATIVAR"/>
+        </properties>
+      </component>
+      <component id="e9753" class="javax.swing.JLabel" binding="lblSrvTerceirosLegenda">
+        <constraints>
+          <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-65536"/>
+          <text value="Inspirado no Whatsapp Web"/>
+          <verticalAlignment value="1"/>
+          <verticalTextPosition value="1"/>
+        </properties>
+      </component>
+      <component id="d4a57" class="javax.swing.JLabel" binding="lblSrvPublicitario">
+        <constraints>
+          <grid row="18" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <text value="Serviço Publicitário:"/>
+          <verticalAlignment value="3"/>
+          <verticalTextPosition value="3"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="2c245" class="javax.swing.JToggleButton" binding="btnAtivarPublicitario">
+        <constraints>
+          <grid row="18" column="2" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <label value="ATIVAR"/>
+          <text value="ATIVAR"/>
+        </properties>
+      </component>
+      <component id="2f4c7" class="javax.swing.JLabel" binding="lblSrvPublicitarioLegenda">
+        <constraints>
+          <grid row="20" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-65536"/>
+          <text value="Envio de Propagandas em Multicast"/>
+          <verticalAlignment value="1"/>
+          <verticalTextPosition value="1"/>
+        </properties>
+      </component>
+      <hspacer id="bd57c">
+        <constraints>
+          <grid row="11" column="0" row-span="10" col-span="1" vsize-policy="1" hsize-policy="4" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="5" height="10"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <hspacer id="931fd">
+        <constraints>
+          <grid row="2" column="3" row-span="10" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="5" height="10"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <vspacer id="f1a05">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="7ad2d" class="javax.swing.JSeparator">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="d010d" class="javax.swing.JSeparator">
+        <constraints>
+          <grid row="21" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <vspacer id="4893">
+        <constraints>
+          <grid row="22" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="d0e4b" class="javax.swing.JLabel" binding="lblSrvDesktop">
+        <constraints>
+          <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <text value="Serviço Desktop:"/>
+          <verticalAlignment value="3"/>
+          <verticalTextPosition value="3"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
