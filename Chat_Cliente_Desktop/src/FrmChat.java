@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
+import java.net.URL;
 
 public class FrmChat extends JFrame {
     public String msg;
@@ -19,24 +20,37 @@ public class FrmChat extends JFrame {
     public void gerarMsg() {
         this.msg = "";
 
-        this.msg += "<img src='" + Util.avatar + "' width='20px' height='20px'>";
+        String avatarPath = Util.avatar;
+        URL resource = Util.class.getResource("/" + avatarPath.replace("./", ""));
+        if (resource != null) {
+            System.out.println(resource.toExternalForm());
+            this.msg += "<img src='" + resource.toExternalForm() + "' width='20' height='20'>";
+        }
         this.msg += "<font color='" + Util.cor + "'>" + Util.nickname + "</font>";
+
+        int emojiSize = 16;
 
         if(cbModo.getSelectedItem().toString().equals("Fala")){
             this.msg += "<b> Fala: </b>";
             this.msg += txtMensagem.getText();
 
         } else if(cbModo.getSelectedItem().toString().equals("Grita")){
-            this.msg += "<b><u><i> GRITA: </i></u></b>";
-            this.msg += "<font color='tomato' size='+1'>" + txtMensagem.getText().toUpperCase() + "</font>";
-
+            this.msg += "<b><u> GRITA: </u></b>";
+            this.msg += "<font color='red' size='+1'>" + txtMensagem.getText().toUpperCase() + "</font>";
+            emojiSize += 8;
         } else if(cbModo.getSelectedItem().toString().equals("Xinga")){
-            this.msg += "<b><u><font color='red'> Xinga: </font></u></b>";
+            this.msg += "<b><u><i><font color='red'> Xinga: </font></i></u></b>";
             this.msg += "<b><font color='red' size='+4'>" + txtMensagem.getText().toUpperCase() + "!!!!!</font><b>";
-
+            emojiSize += 12;
         }
 
-        this.msg += "<img src='./images/" + cbEmoji + ".png' width='10px' height='10px'>";
+        if(!cbEmoji.getSelectedItem().toString().equals("Nenhum")){
+            String emojiPath = "./images/" + cbEmoji.getSelectedItem().toString() + ".png";
+            resource = Util.class.getResource("/" + emojiPath.replace("./", ""));
+            if (resource != null) {
+                this.msg += " <img src='" + resource.toExternalForm() + "' width='" + emojiSize + "' height='" + emojiSize + "'>";
+            }
+        }
         this.msg += "<br>";
 
         edtConversa.setText(this.msg);

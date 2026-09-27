@@ -52,25 +52,25 @@ public class FrmLogin extends JFrame {
         btnEntrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Util.nickname =  txtNick.getText();
-                Util.nickname = Util.nickname.substring(0, 1).toUpperCase() + Util.nickname.substring(1);
-                if(radAzul.isSelected()){
-                    Util.cor = "darkBlue";
-                } else if(radPreto.isSelected()){
-                    Util.cor = "black";
-                }  else if(radVermelho.isSelected()){
-                    Util.cor = "tomato";
-                }
+                Util.nickname =  txtNick.getText().trim();
+                if(!Util.nickname.isEmpty()) {
+                    Util.nickname = Util.nickname.substring(0, 1).toUpperCase() + Util.nickname.substring(1);
+                    if (radAzul.isSelected()) {
+                        Util.cor = "blue";
+                    } else if (radPreto.isSelected()) {
+                        Util.cor = "black";
+                    } else if (radVermelho.isSelected()) {
+                        Util.cor = "red";
+                    }
 
-                if(radMenino.isSelected()){
-                    Util.avatar = "./images/menino.png";
-                } else if(radMenina.isSelected()){
-                    Util.avatar = "./images/menina.png";
-                } else if(radNaoTem.isSelected()){
-                    Util.avatar = "./images/sinal-de-interrogacao.png";
-                }
+                    if (radMenino.isSelected()) {
+                        Util.avatar = "./images/menino.png";
+                    } else if (radMenina.isSelected()) {
+                        Util.avatar = "./images/menina.png";
+                    } else if (radNaoTem.isSelected()) {
+                        Util.avatar = "./images/sinal-de-interrogacao.png";
+                    }
 
-                if(!Util.nickname.isEmpty() && !Util.cor.isEmpty() && !Util.avatar.isEmpty()){
                     FrmChat frmChat = new FrmChat();
                     frmChat.pack();
                     frmChat.setLocationRelativeTo(null);
@@ -78,7 +78,7 @@ public class FrmLogin extends JFrame {
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(FrmLogin.this,
-                            "Por favor, digite um nickname, selecione uma cor e um avatar!",
+                            "Por favor, digite um nickname!",
                             "Campos Obrigatórios",
                             JOptionPane.WARNING_MESSAGE);
                 }
