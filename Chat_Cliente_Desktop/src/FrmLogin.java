@@ -64,7 +64,7 @@ public class FrmLogin extends JFrame {
                     }
 
                     if (radMenino.isSelected()) {
-                        Util.avatar = "./images/menino.png";
+                        Util.avatar = "./images/homem.png";
                     } else if (radMenina.isSelected()) {
                         Util.avatar = "./images/menina.png";
                     } else if (radNaoTem.isSelected()) {

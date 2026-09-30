@@ -2,7 +2,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class FrmChat extends JFrame {
     public String msg;
@@ -17,13 +21,12 @@ public class FrmChat extends JFrame {
     private JButton btnEnviar;
     private JPanel panelChat;
 
-    public void gerarMsg() {
+    public void gerarEEnviarMsg() {
         this.msg = "";
 
         String avatarPath = Util.avatar;
         URL resource = Util.class.getResource("/" + avatarPath.replace("./", ""));
         if (resource != null) {
-            System.out.println(resource.toExternalForm());
             this.msg += "<img src='" + resource.toExternalForm() + "' width='20' height='20'>";
         }
         this.msg += "<font color='" + Util.cor + "'>" + Util.nickname + "</font>";
@@ -53,7 +56,52 @@ public class FrmChat extends JFrame {
         }
         this.msg += "<br>";
 
+        ArrayList<String> codigos = new ArrayList<String>();
+        ArrayList<String> simbolos = new ArrayList<String>();
+
+        codigos.add(":-)");
+        simbolos.add("&#128513;");
+
+        codigos.add(";-)");
+        simbolos.add("&#128521;");
+
+        codigos.add("<3");
+        simbolos.add("&#129294;");
+
+        codigos.add("</3");
+        simbolos.add("&#128148;");
+
+        codigos.add("<ok>");
+        simbolos.add("&#128076;");
+
+        codigos.add("-_-");
+        simbolos.add("&#128529;");
+
+        codigos.add("s2_s2");
+        simbolos.add("&#128525;");
+
+        for(int i = 0; i < codigos.size(); i++){
+            this.msg = this.msg.replace(codigos.get(i), simbolos.get(i));
+        }
+
+        System.out.println(this.msg);
+
+        txtMensagem.setText("");
         edtConversa.setText(this.msg);
+
+        try {
+            Socket cliente = new Socket("200.128.143.140", 6662);
+            ObjectOutputStream output = new ObjectOutputStream(cliente.getOutputStream());
+            output.flush();
+
+            output.writeUTF(this.msg);
+
+            output.close();
+            cliente.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro cliente ao enviar: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     FrmChat() {
@@ -61,12 +109,20 @@ public class FrmChat extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(panelChat);
         setVisible(true);
-        btnEnviar.addKeyListener(new KeyAdapter() {
-        });
+
         btnEnviar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gerarMsg();
+                gerarEEnviarMsg();
+            }
+        });
+
+        txtMensagem.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    gerarEEnviarMsg();
+                }
             }
         });
     }

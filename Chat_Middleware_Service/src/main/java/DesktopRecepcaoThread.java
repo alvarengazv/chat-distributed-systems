@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -19,17 +20,17 @@ public class DesktopRecepcaoThread implements Runnable{
                 receptor = new ServerSocket(Util.portaRecepcaoDesktop);
                 cliente = receptor.accept();
 
-                BufferedReader reader = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
-                String msg = reader.readLine();
+                ObjectInputStream reader = new ObjectInputStream(cliente.getInputStream());
+                String msg = reader.readUTF();
 
-                JOptionPane.showMessageDialog(null, "Mensagem: " + msg, "Recepção", JOptionPane.INFORMATION_MESSAGE);
+//                JOptionPane.showMessageDialog(null, "Mensagem: " + msg, "Recepção", JOptionPane.INFORMATION_MESSAGE);
 
                 reader.close();
                 cliente.close();
                 receptor.close();
 
                 FileWriter fWriter = new FileWriter(Util.pathRepDesktop, true);
-                fWriter.write(msg + "\n");
+                fWriter.write(msg + System.lineSeparator());
 
                 fWriter.close();
             } catch (Exception e) {
