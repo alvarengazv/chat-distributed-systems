@@ -1,8 +1,13 @@
 import javax.swing.*;
+import javax.swing.text.EditorKit;
+import javax.swing.text.html.HTMLDocument;
+import javax.swing.text.html.HTMLEditorKit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.URL;
@@ -87,7 +92,7 @@ public class FrmChat extends JFrame {
         System.out.println(this.msg);
 
         txtMensagem.setText("");
-        edtConversa.setText(this.msg);
+//        edtConversa.setText(this.msg);
 
         try {
             Socket cliente = new Socket("200.128.143.140", 6662);
@@ -104,11 +109,35 @@ public class FrmChat extends JFrame {
         }
     }
 
-    FrmChat() {
+    public FrmChat() {
         panelChat.setBorder(BorderFactory.createTitledBorder("Chat"));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(panelChat);
         setVisible(true);
+
+        Thread.ofVirtual().start(() -> {
+            while (true) {
+                try {
+                    Socket cliente = new Socket("200.128.143.140", 6661);
+                    ObjectInputStream input = new ObjectInputStream(cliente.getInputStream());
+                    String msgs = input.readUTF();
+
+                    input.close();
+                    cliente.close();
+
+                    HTMLDocument doc = (HTMLDocument) edtConversa.getDocument();
+                    HTMLEditorKit kit = (HTMLEditorKit) edtConversa.getEditorKit();
+
+                    edtConversa.setText("");
+                    kit.insertHTML(doc, doc.getLength(), msgs, 0, 0, null);
+
+                    Thread.sleep(5000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Erro ao receber mensagens no cliente: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
 
         btnEnviar.addActionListener(new ActionListener() {
             @Override

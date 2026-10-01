@@ -5,6 +5,7 @@ public class Util {
     public static String pathRepDesktop = "/home/alvarengazv/dados-SD/repositorio.txt";
 
     public static DesktopRecepcaoThread desktopRecepcaoThread;
+    public static DesktopEnvioThread desktopEnvioThread;
 
 //    public static int portaRecepcaoWeb = 6663;
 //    public static int portaRecepcaoTerceiros = 6664;

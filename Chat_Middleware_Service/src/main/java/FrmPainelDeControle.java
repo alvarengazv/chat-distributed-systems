@@ -27,6 +27,9 @@ public class FrmPainelDeControle extends JFrame {
                     btnAtivarDesktop.setText("DESATIVAR");
                     Util.desktopRecepcaoThread =  new DesktopRecepcaoThread();
                     Thread.ofVirtual().start(Util.desktopRecepcaoThread);
+
+                    Util.desktopEnvioThread = new DesktopEnvioThread();
+                    Thread.ofVirtual().start(Util.desktopEnvioThread);
                 } else {
                     int resposta = JOptionPane.showConfirmDialog(null, "Você tem certeza de que deseja parar os serviços para clientes DESKTOP?", "Confirmação",  JOptionPane.YES_NO_OPTION);
 

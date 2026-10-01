@@ -35,8 +35,8 @@ public class DesktopRecepcaoThread implements Runnable{
                 fWriter.close();
             } catch (Exception e) {
                 if(!paradaManual) {
-                    JOptionPane.showMessageDialog(null, "Erro em DesktopRecepcaoThread::run - " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                     e.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Erro em DesktopRecepcaoThread::run - " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
@@ -56,6 +56,7 @@ public class DesktopRecepcaoThread implements Runnable{
             }
         } catch (Exception e) {
             if(paradaManual) {
+                e.printStackTrace();
                 JOptionPane.showMessageDialog(null, "Erro em DesktopRecepcaoThread::fecharServidor - " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             }
         }
