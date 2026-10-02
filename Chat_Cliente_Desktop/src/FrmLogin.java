@@ -20,6 +20,12 @@ public class FrmLogin extends JFrame {
     private JLabel lblNaoTem;
 
     FrmLogin() {
+        setContentPane(panelLogin);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+
         lblMenina.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -94,16 +100,5 @@ public class FrmLogin extends JFrame {
                     "Campos Obrigatórios",
                     JOptionPane.WARNING_MESSAGE);
         }
-    }
-
-    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
-        FrmLogin frmLogin = new FrmLogin();
-
-        frmLogin.setContentPane(frmLogin.panelLogin);
-        frmLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frmLogin.pack();
-        frmLogin.setLocationRelativeTo(null);
-        frmLogin.setVisible(true);
     }
 }

@@ -95,7 +95,7 @@ public class FrmChat extends JFrame {
 //        edtConversa.setText(this.msg);
 
         try {
-            Socket cliente = new Socket("200.128.143.140", 6662);
+            Socket cliente = new Socket(Util.serverIpAddress, 6662);
             ObjectOutputStream output = new ObjectOutputStream(cliente.getOutputStream());
             output.flush();
 
@@ -118,7 +118,7 @@ public class FrmChat extends JFrame {
         Thread.ofVirtual().start(() -> {
             while (true) {
                 try {
-                    Socket cliente = new Socket("200.128.143.140", 6661);
+                    Socket cliente = new Socket(Util.serverIpAddress, 6661);
                     ObjectInputStream input = new ObjectInputStream(cliente.getInputStream());
                     String msgs = input.readUTF();
 
@@ -130,8 +130,9 @@ public class FrmChat extends JFrame {
 
                     edtConversa.setText("");
                     kit.insertHTML(doc, doc.getLength(), msgs, 0, 0, null);
+                    edtConversa.setCaretPosition(doc.getLength());
 
-                    Thread.sleep(5000);
+                    Thread.sleep(1000);
                 } catch (Exception e) {
                     e.printStackTrace();
                     JOptionPane.showMessageDialog(null, "Erro ao receber mensagens no cliente: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -154,12 +155,5 @@ public class FrmChat extends JFrame {
                 }
             }
         });
-    }
-
-    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        FrmChat frmChat = new FrmChat();
-        frmChat.pack();
-        frmChat.setLocationRelativeTo(null);
-        frmChat.setVisible(true);
     }
 }
