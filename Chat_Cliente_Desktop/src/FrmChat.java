@@ -70,7 +70,6 @@ public class FrmChat extends JFrame {
             JButton botao = new JButton(emoji);
             botao.addActionListener(e -> {
                 txtMensagem.replaceSelection(emoji);
-                mnuEmojis.setVisible(false);
                 txtMensagem.requestFocusInWindow();
             });
             painelEmojis.add(botao);
