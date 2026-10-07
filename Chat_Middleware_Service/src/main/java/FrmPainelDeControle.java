@@ -34,8 +34,9 @@ public class FrmPainelDeControle extends JFrame {
                     int resposta = JOptionPane.showConfirmDialog(null, "Você tem certeza de que deseja parar os serviços para clientes DESKTOP?", "Confirmação",  JOptionPane.YES_NO_OPTION);
 
                     if(resposta == JOptionPane.YES_OPTION){
-                        btnAtivarDesktop.setText("ATIVAR");
                         Util.desktopRecepcaoThread.fecharServidor();
+                        Util.desktopEnvioThread.fecharServidor();
+                        btnAtivarDesktop.setText("ATIVAR");
                     } else {
                         btnAtivarDesktop.setSelected(true);
                     }

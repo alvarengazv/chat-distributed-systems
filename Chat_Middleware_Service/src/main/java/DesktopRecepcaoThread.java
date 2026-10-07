@@ -7,9 +7,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class DesktopRecepcaoThread implements Runnable{
-    private boolean paradaManual = false;
+    private volatile boolean paradaManual = false;
     private Socket cliente;
-    private ServerSocket receptor;
+    private volatile ServerSocket receptor;
 
     @Override
     public void run() {
@@ -18,6 +18,10 @@ public class DesktopRecepcaoThread implements Runnable{
 
             try {
                 receptor = new ServerSocket(Util.portaRecepcaoDesktop);
+                if (paradaManual) {
+                    receptor.close();
+                    break;
+                }
                 cliente = receptor.accept();
 
                 ObjectInputStream reader = new ObjectInputStream(cliente.getInputStream());
