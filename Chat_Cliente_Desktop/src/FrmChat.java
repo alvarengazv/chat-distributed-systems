@@ -115,7 +115,7 @@ public class FrmChat extends JFrame {
     }
 
     public void gerarEEnviarMsg() {
-        if(txtMensagem.getText().trim().equals("")){
+        if(txtMensagem.getText().trim().equals("") && figuraSelecionada == null){
             return;
         }
         if (emManutencao) {
@@ -204,7 +204,7 @@ public class FrmChat extends JFrame {
                     if (!emManutencao) {
                         String mensagens = historico;
                         SwingUtilities.invokeLater(() ->
-                                edtConversa.setText("<html>" + mensagens + "<b>Em manutenção...</b></html>"));
+                                edtConversa.setText("<html>" + mensagens + "<center><b>Em manutenção...</b></center></html>"));
                     }
                     emManutencao = true;
                 }
