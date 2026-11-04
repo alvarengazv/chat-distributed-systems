@@ -11,7 +11,6 @@
     <title>Topo</title>
 </head>
 <body>
-    <h1>TOPO</h1>
     <%  // Scriptlet
 //        out.print("<b>Nickname:</b>" + session.getAttribute("nickname") + "<br>" +
 //                "<b>Cor:</b>" + session.getAttribute("cor") + "<br>" +

@@ -8,7 +8,7 @@
 <body>
 <br><br><br>
 <center>
-    <form name="frmLogin" action="chat.jsp" method ="get">
+    <form name="frmLogin" action="chat.jsp" method ="post">
         <table border ="1">
             <tr>
                 <td colspan="2" bgcolor="black" align="center">

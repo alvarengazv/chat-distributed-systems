@@ -18,15 +18,6 @@ public class DesktopEnvioThread implements Runnable{
                     FileReader fReader = new FileReader(Util.pathRepDesktop);
                     BufferedReader buffer = new BufferedReader(fReader)
             ) {
-                StringBuilder msgs = new StringBuilder();
-
-                while (buffer.ready()) {
-                    msgs.append(buffer.readLine());
-                }
-
-                buffer.close();
-                fReader.close();
-
                 emissor = new ServerSocket(Util.portaEnvioDesktop);
                 emissor.setReuseAddress(true);
                 if (paradaManual) {
@@ -35,6 +26,12 @@ public class DesktopEnvioThread implements Runnable{
                 }
 
                 cliente = emissor.accept();
+
+                StringBuilder msgs = new StringBuilder();
+                String linha;
+                while ((linha = buffer.readLine()) != null) {
+                    msgs.append(linha);
+                }
 
                 ObjectOutputStream output = new ObjectOutputStream(cliente.getOutputStream());
                 output.flush();

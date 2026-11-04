@@ -12,7 +12,26 @@
 </head>
 <body>
 <%
-    session.setAttribute("nickname", request.getParameter("txtNickname"));
+    request.setCharacterEncoding("UTF-8");
+    String nickname = request.getParameter("txtNickname");
+    if (nickname != null) {
+        nickname = nickname.toLowerCase(new java.util.Locale("pt", "BR"));
+        StringBuilder formatado = new StringBuilder();
+        boolean inicioPalavra = true;
+        for (int i = 0; i < nickname.length();) {
+            int letra = nickname.codePointAt(i);
+            if (Character.isWhitespace(letra) || Character.isSpaceChar(letra)) {
+                inicioPalavra = true;
+            } else if (inicioPalavra) {
+                letra = Character.toTitleCase(letra);
+                inicioPalavra = false;
+            }
+            formatado.appendCodePoint(letra);
+            i += Character.charCount(nickname.codePointAt(i));
+        }
+        nickname = formatado.toString();
+    }
+    session.setAttribute("nickname", nickname);
     session.setAttribute("cor", request.getParameter("radCor"));
     session.setAttribute("avatar", request.getParameter("radAvatar"));
 %>
@@ -26,7 +45,7 @@
                 "<b>Avatar em sessão:</b>" + session.getAttribute("avatar"));*/
     %>
     <iframe src="topo.jsp" width="100%" height="20%"></iframe>
-    <iframe src="mensagem.jsp" width="100%" height="60%"></iframe>
+    <iframe name="quadroMensagens" src="mensagem.jsp#fim" width="100%" height="60%"></iframe>
     <iframe src="conversa.jsp" width="100%" height="20%"></iframe>
 </body>
 </html>
