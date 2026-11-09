@@ -1,0 +1,111 @@
+<font color='blue'>Oi</font><b> Fala: </b>oioio<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/homem.png' width='20' height='20'><font color='black'>Guilherme</font><b> Fala: </b>Olá (&#128513;) (&#128521;) (&#129294;) (&#128148;) (&#128076;) (&#128529;) (&#128525;)<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/homem.png' width='20' height='20'><font color='black'>Guilherme</font><b> Fala: </b>Olá (&#128513;) (&#128521;) (&#129294;) (&#128148;) (&#128076;) (&#128529;) (&#128525;) <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/dinheiro.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/menina.png' width='20' height='20'><font color='red'>Guilherme2</font><b><u> GRITA: </u></b><font color='red' size='+1'>TESTE OLÁ Á 7TESTE (&#128513;) (&#128521;) (&#129294;) (&#128148;) (<OK>) (&#128529;) (S2_S2)</font> <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/coracao.png' width='24' height='24'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/homem.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>Olá á 7TESTE (&#128513;) (&#128521;) (&#129294;) (&#128148;) (&#128076;) (&#128529;) (&#128525;)<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='black'>Guilherme</font><b> Fala: </b>Olá á 7TESTE (&#128513;) (&#128521;) (&#129294;) (&#128148;) (&#128076;) (&#128529;) (&#128525;)<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/homem.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>Olá á 7TESTE (&#128513;) (&#128521;) (&#129294;) (&#128148;) (&#128076;) (&#128529;) (&#128525;)<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/homem.png' width='20' height='20'><font color='red'>Guilherme</font><b> Fala: </b>Olá á 7TESTE (&#128513;) (&#128521;) (&#129294;) (&#128148;) (&#128076;) (&#128529;) (&#128525;)<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/homem.png' width='20' height='20'><font color='red'>Guilherme</font><b> Fala: </b>teste<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/homem.png' width='20' height='20'><font color='red'>Guilherme</font><b><u> GRITA: </u></b><font color='red' size='+1'>OIOI</font><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>eai, blz? <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/dinheiro.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>bao e vc <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/dinheiro.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>&#128525; <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/dinheiro.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>opa<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b> Fala: </b>teste<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilhermea</font><b> Fala: </b>ola<br>
+<img src='file:/E:/geral/Sistemas%20Distribuidos/chat-distributed-systems/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/menina.png' width='20' height='20'><font color='red'>Guilherme 2</font><b> Fala: </b>ola<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme 1</font><b> Fala: </b>oii<br>
+<img src='file:/E:/geral/Sistemas%20Distribuidos/chat-distributed-systems/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/menina.png' width='20' height='20'><font color='red'>Guilherme 2</font><b> Fala: </b>opa<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Aaa</font><b> Fala: </b>oioi😂 <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/beijo.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Aaa</font><b> Fala: </b> <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/coracao.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Hh</font><b> Fala: </b> <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/homem.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Hh</font><b> Fala: </b> <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/beijo.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Hh</font><b> Fala: </b>😁asdsa <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/beijo.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Dada</font><b> Fala: </b> <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/menina.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Dada</font><b> Fala: </b> <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/dinheiro.png' width='16' height='16'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Dada</font><b><u> GRITA: </u></b><font color='red' size='+1'>😀DADADADA❤️</font> <img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/dinheiro.png' width='24' height='24'><br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b> Fala: </b>oi<br>
+<img src='file:/home/alvarengazv/Documents/sistemas-distribuidos/Chat_Cliente_Desktop/out/production/Chat_Cliente_Desktop/images/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b> Fala: </b>oi<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>a<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b><u> GRITA: </u></b><font color='red' size='+1'></font> <img src='chatimg:beijo.png' width='24' height='24'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>ola<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>😮😢<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>😁😂😍dada<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Lula amigo do joao francisco</font><b> Fala: </b>lula 13 joao francisco q disse<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b> Fala: </b>ooo <img src='chatimg:dinheiro.png' width='16' height='16'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Lula amigo do joao francisco</font><b> Fala: </b>😀😀😀😀😀😀😀 <img src='chatimg:beijo.png' width='16' height='16'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Lula amigo do joao francisco</font><b> Fala: </b>s <img src='chatimg:coracao.png' width='16' height='16'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Lula amigo do joao francisco</font><b><u><i><font color='red'> Xinga: </font></i></u></b><b><font color='red' size='+4'>DSDSDSDSDSDSD!!!!!</font></b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b><u><i><font color='red'> Xinga: </font></i></u></b><b><font color='red' size='+4'>SSSS!!!!!</font></b> <img src='chatimg:menina.png' width='28' height='28'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Lula amigo do joao francisco</font><b><u> GRITA: </u></b><font color='red' size='+1'>SDSNMDB QWJRBQWINQWOEIR</font><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b><u> GRITA: </u></b><font color='red' size='+1'>SSSSS</font><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Lula amigo do joao francisco</font><b><u> GRITA: </u></b><font color='red' size='+1'>SDSDSDSDSSDSDSD</font><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b><u> GRITA: </u></b><font color='red' size='+1'>A</font><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b><u> GRITA: </u></b><font color='red' size='+1'>DA</font><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b><u> GRITA: </u></b><font color='red' size='+1'>A</font><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Teste</font><b><u> GRITA: </u></b><font color='red' size='+1'>A</font><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>aaa <img src='chatimg:coracao.png' width='16' height='16'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>😀 <img src='chatimg:coracao.png' width='16' height='16'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b> <img src='chatimg:menina.png' width='16' height='16'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>😀😀<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b> <img src='chatimg:coracao.png' width='16' height='16'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b> <img src='chatimg:menina.png' width='16' height='16'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>oi<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b><u> GRITA: </u></b><font color='red' size='+1'>OI</font><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b><u><i><font color='red'> Xinga: </font></i></u></b><b><font color='red' size='+4'>OI!!!!!</font></b><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b><u><i><font color='red'> Xinga: </font></i></u></b><b><font color='red' size='+4'>!!!!!</font></b> <img src='chatimg:coracao.png' width='28' height='28'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b><u><i><font color='red'> Xinga: </font></i></u></b><b><font color='red' size='+4'>!!!!!</font></b> <img src='chatimg:menina.png' width='28' height='28'><br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme</font><b> Fala: </b>a😁<br>
+<img src='chatimg:menina.png' width='20' height='20'><font color='blue'>Daniel</font><b> Fala: </b>oi 😊<br>
+<img src='chatimg:menina.png' width='20' height='20'><font color='blue'>Daniel</font><b> Fala: </b> <img src='chatimg:dinheiro.png' width='16' height='16'><br>
+<img src='chatimg:menina.png' width='20' height='20'><font color='blue'>Daniel</font><b> Fala: </b> <img src='chatimg:coracao.png' width='16' height='16'><br>
+<img src='chatimg:menina.png' width='20' height='20'><font color='blue'>Daniel</font><b> Fala: </b>😢<br>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guigui</font><b> Fala: </b>opa<br>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> oioi😭</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> asoidosaid</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> oii</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> olá</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> oi</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> oioiaaa</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> olaaa</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> ooooooooooooo👍</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> opa bao</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> oopa</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> oooooi</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme</b></span> <b>Fala:</b> doadoadia</div>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme2</font><b> Fala: </b>opa<br>
+<div><img src="images/woman.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme1</b></span> <b>Fala:</b> opa</div>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme2</font><b> Fala: </b>beleza?<br>
+<div><img src="images/woman.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme1</b></span> <b>Fala:</b> beleza</div>
+<div><img src="images/woman.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme1</b></span> <b>Fala:</b> olá</div>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme2</font><b> Fala: </b>oioi<br>
+<div><img src="images/woman.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme1</b></span> <b>Fala:</b> blz?</div>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme2</font><b> Fala: </b>blz e vc<br>
+<div><img src="images/woman.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme1</b></span> <b>Fala:</b> beleeeza</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> oi</div>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme2</font><b> Fala: </b>oi<br>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> blz?</div>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme2</font><b> Fala: </b>blz e vc?<br>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> oi</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> opa</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> blz?</div>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme2</font><b> Fala: </b>opa<br>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> blz e vc</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> opaopa</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> ooopa</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> baaao</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> opa</div>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> blz?</div>
+<img src='chatimg:sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme2</font><b> Fala: </b>sim e vc?<br>
+<div><img src="images/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme11</b></span> <b>Fala:</b> blzz</div>
+<img src='http://127.0.0.1:8080/figurinhas/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme1</font><b> Fala: </b>opa<br>
+<div><img src="http://127.0.0.1:8080/figurinhas/neutralIcon.png" width="29" height="32" alt=""> <span style="color:red"><b>Guilherme2</b></span> <b>Fala:</b> opa, blz?</div>
+<img src='http://127.0.0.1:8080/figurinhas/sinal-de-interrogacao.png' width='20' height='20'><font color='blue'>Guilherme1</font><b> Fala: </b>blz e vc?<br>

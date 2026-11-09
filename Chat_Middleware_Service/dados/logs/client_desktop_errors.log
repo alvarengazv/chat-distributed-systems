@@ -1,0 +1,6 @@
+2026-11-04T11:54:14.156512218-03:00 | fedora | 127.0.0.1 | FrmChat:receberMensagens | java.net.ConnectException: Connection refused
+
+2026-11-04T11:54:52.796999337-03:00 | fedora | 127.0.0.1 | FrmChat:receberMensagens | java.net.ConnectException: Connection refused
+
+2026-11-04T11:56:17.876122998-03:00 | fedora | 127.0.0.1 | FrmChat:receberMensagens | java.net.ConnectException: Connection refused
+

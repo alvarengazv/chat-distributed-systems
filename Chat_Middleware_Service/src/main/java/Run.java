@@ -5,6 +5,18 @@ public class Run {
     static MenuServidor menuServidor;
 
     public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        try {
+            Util.inicializar();
+        }
+        catch (java.io.IOException e) {
+            RegistroErros.servidor("internal", null, null, "Run:main", e);
+            throw new IllegalStateException(e);
+        }
+
+        Runtime.getRuntime().addShutdownHook(new Thread(Util::encerrar, "encerrar-servicos"));
+        if (java.util.Arrays.asList(args).contains("--cli")) {
+            ConsoleServidor.executar(); return;
+        }
         UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
 
         Color gtkMenuBg       = new Color(45, 45, 45);    // #2d2d2d

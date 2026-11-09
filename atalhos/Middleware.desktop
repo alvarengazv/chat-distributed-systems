@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Middleware do Chat
+Comment=Inicia a interface gráfica do Middleware
+Path=/home/alvarengazv/Documents/sistemas-distribuidos/chat-distributed-systems
+Exec=java -jar /home/alvarengazv/Documents/sistemas-distribuidos/chat-distributed-systems/dist/middleware.jar
+Terminal=false
+Categories=Network;Chat;

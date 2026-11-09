@@ -1,65 +1,35 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="com.mycompany.chat_cliente_web.InterfaceMiddlewareWeb" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <style>
+        body { margin:0; background:#f5f4f3; color:#303438; font:14px Arial,sans-serif; }
+        form { width:max-content; max-width:calc(100% - 32px); margin:80px auto; }
+        .linha { display:flex; align-items:center; gap:10px; margin:8px 0; }
+        .titulo { width:75px; text-align:right; }
+        input[type=text] { width:230px; padding:4px; border:1px solid #aaa; border-radius:4px; }
+        .opcao { display:inline-flex; align-items:center; gap:3px; }
+        img { width:16px; height:16px; object-fit:contain; }
+        button { display:block; margin:10px auto; padding:8px 16px; }
+    </style>
 </head>
 <body>
-<br><br><br>
-<center>
-    <form name="frmLogin" action="chat.jsp" method ="post">
-        <table border ="1">
-            <tr>
-                <td colspan="2" bgcolor="black" align="center">
-                    <font color="white" size="3"> chat distribuído 1.0 </font>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>Nickname</b>
-                </td>
-                <td>
-                    <input type="text" name ="txtNickname" maxlength="20" size="100">
-                </td>
-            </tr>
-            <tr>
-                <td align="right">
-                    <b>Cor</b>
-                </td>
-                <td align="center">
-                    <input type="radio" name="radCor" value="navy" checked>
-                    <font color="navy"><b>Azul</b></font>
-                    <input type="radio" name="radCor" value="red" >
-                    <font color="red"><b>Vermelho</b></font>
-                    <input type="radio" name="radCor" value="black" >
-                    <font color="black"><b>Preto</b></font>
-                </td>
-
-            </tr>
-            <tr>
-                <td align="right">
-                    <b>Avatar</b>
-                </td>
-                <td align='center'>
-                    <input type="radio" name="radAvatar" value="manIcon.png" checked>
-                    <img src="images/manIcon.png" width='30' height="30">
-
-                    <input type="radio" name="radAvatar" value="woman.png" >
-                    <img src="images/woman.png" width='30' height="30">
-
-                    <input type="radio" name="radAvatar" value="neutralIcon.png" >
-                    <img src="images/neutralIcon.png" width='30' height="30">
-                </td>
-            </tr>
-            <tr >
-                <td colspan='2' align='center'>
-                    <input type="submit" name="btnEntrar" value="entrar">
-                </td>
-
-            </tr>
-        </table>
-    </form>
-</center>
+<form name="frmLogin" action="chat.jsp" method="post">
+    <div class="linha"><label class="titulo" for="txtNickname">Nickname:</label><input id="txtNickname" name="txtNickname" maxlength="20" required autofocus></div>
+    <div class="linha"><span class="titulo">Cor:</span>
+        <label class="opcao" style="color:blue"><input type="radio" name="radCor" value="blue" checked>Azul</label>
+        <label class="opcao"><input type="radio" name="radCor" value="black">Preto</label>
+        <label class="opcao" style="color:red"><input type="radio" name="radCor" value="red">Vermelho</label>
+    </div>
+    <div class="linha"><span class="titulo">Avatar:</span>
+        <label class="opcao"><input type="radio" name="radAvatar" value="homem.png"><img src="<%= InterfaceMiddlewareWeb.imagem("homem.png") %>" alt="Homem"></label>
+        <label class="opcao"><input type="radio" name="radAvatar" value="menina.png"><img src="<%= InterfaceMiddlewareWeb.imagem("menina.png") %>" alt="Menina"></label>
+        <label class="opcao"><input type="radio" name="radAvatar" value="sinal-de-interrogacao.png" checked><img src="<%= InterfaceMiddlewareWeb.imagem("sinal-de-interrogacao.png") %>" alt="Sem avatar"></label>
+    </div>
+    <button type="submit" name="btnEntrar">Entrar</button>
+</form>
 </body>
 </html>

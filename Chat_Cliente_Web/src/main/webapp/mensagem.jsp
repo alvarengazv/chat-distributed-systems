@@ -1,17 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" import="java.net.Socket,java.net.InetSocketAddress,java.io.ObjectInputStream,java.io.IOException" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" import="com.mycompany.chat_cliente_web.InterfaceMiddlewareWeb,java.io.IOException" %>
 <%
     response.setHeader("Cache-Control", "no-store");
     String historico = "";
     boolean indisponivel = false;
-    try (Socket cliente = new Socket()) {
-        cliente.connect(new InetSocketAddress("127.0.0.1", 6661), 2000);
-        cliente.setSoTimeout(2000);
-        try (ObjectInputStream entrada = new ObjectInputStream(cliente.getInputStream())) {
-            historico = entrada.readUTF();
-            historico = historico.replaceAll("(?i)src=(['\"])chatimg:([a-zA-Z0-9_-]+\\.png)\\1", "src=$1images/$2$1");
-        }
-    } catch (IOException e) {
+    try {
+        historico = InterfaceMiddlewareWeb.imagens(InterfaceMiddlewareWeb.consultar());
+    } catch (IOException erro) {
         indisponivel = true;
+        InterfaceMiddlewareWeb.registrar(request.getRemoteHost(), "mensagem:consultar", erro);
     }
 %>
 <!DOCTYPE html>

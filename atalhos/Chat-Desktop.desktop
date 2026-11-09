@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Chat-Desktop
+Comment=Inicia o cliente Java Desktop
+Path=/home/alvarengazv/Documents/sistemas-distribuidos/chat-distributed-systems
+Exec=java -jar /home/alvarengazv/Documents/sistemas-distribuidos/chat-distributed-systems/dist/client-desktop.jar
+Terminal=false
+Categories=Network;Chat;

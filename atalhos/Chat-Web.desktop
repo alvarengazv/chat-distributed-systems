@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Publicar Chat Web
+Comment=Inicia o GlassFish e publica o chat e as imagens
+Path=/home/alvarengazv/Documents/sistemas-distribuidos/chat-distributed-systems
+Exec=bash /home/alvarengazv/Documents/sistemas-distribuidos/chat-distributed-systems/scripts/run_standalone.sh web
+Terminal=true
+Categories=Network;Chat;

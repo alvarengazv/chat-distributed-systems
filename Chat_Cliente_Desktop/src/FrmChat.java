@@ -4,9 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.URL;
@@ -23,6 +23,7 @@ public class FrmChat extends JFrame {
     private JLabel lblModo;
     private JComboBox cbModo;
     private JButton btnEnviar;
+    private JButton btnProvocarErro;
     private JPanel panelChat;
     private JPopupMenu mnuEmojis;
     private JButton btnEmojis;
@@ -49,7 +50,7 @@ public class FrmChat extends JFrame {
         Matcher busca = padrao.matcher(html);
         StringBuffer resultado = new StringBuffer();
         while (busca.find()) {
-            URL imagem = Util.class.getResource("/images/" + busca.group(1));
+            URL imagem = Util.imagem(busca.group(1));
             busca.appendReplacement(resultado, Matcher.quoteReplacement(
                     imagem == null ? busca.group() : imagem.toExternalForm()));
         }
@@ -60,7 +61,7 @@ public class FrmChat extends JFrame {
     private void configurarSeletor() {
         JTabbedPane abas = new JTabbedPane();
 
-        JPanel painelEmojis = new JPanel(new GridLayout(0, 6, 4, 4) );
+        JPanel painelEmojis = new JPanel(new GridLayout(0, 6, 4, 4));
         for (String emoji : new String[]{
                 "😀", "😁", "😂", "😊",
                 "😍", "😘", "😎",
@@ -78,7 +79,7 @@ public class FrmChat extends JFrame {
         JPanel painelFiguras = new JPanel(new GridLayout(2, 3, 4, 4));
 
         for (String nome : new String[]{"coracao", "beijo", "dinheiro", "homem", "menina", "sinal-de-interrogacao"}) {
-            URL url = Util.class.getResource("/images/" + nome + ".png");
+            URL url = Util.imagem(nome + ".png");
             if (url == null) continue;
 
             Image imagem = new ImageIcon(url).getImage()
@@ -115,7 +116,7 @@ public class FrmChat extends JFrame {
     }
 
     public void gerarEEnviarMsg() {
-        if(txtMensagem.getText().trim().equals("") && figuraSelecionada == null){
+        if (txtMensagem.getText().trim().equals("") && figuraSelecionada == null) {
             return;
         }
         if (emManutencao) {
@@ -127,9 +128,9 @@ public class FrmChat extends JFrame {
         this.msg = "";
 
         String avatarPath = Util.avatar;
-        URL resource = Util.class.getResource("/" + avatarPath.replace("./", ""));
+        URL resource = Util.imagem(avatarPath.substring(avatarPath.lastIndexOf('/') + 1));
         if (resource != null) {
-            this.msg += "<img src='chatimg:" + avatarPath.substring(avatarPath.lastIndexOf('/') + 1)
+            this.msg += "<img src='" + resource.toExternalForm()
                     + "' width='20' height='20'>";
         }
         this.msg += "<font color='" + Util.cor + "'>" + escaparHtml(Util.nickname) + "</font>";
@@ -137,26 +138,25 @@ public class FrmChat extends JFrame {
         int emojiSize = 16;
         String texto = textoHtml(txtMensagem.getText());
 
-        if(cbModo.getSelectedItem().toString().equals("Fala")){
+        if (cbModo.getSelectedItem().toString().equals("Fala")) {
             this.msg += "<b> Fala: </b>";
             this.msg += texto;
 
-        } else if(cbModo.getSelectedItem().toString().equals("Grita")){
+        } else if (cbModo.getSelectedItem().toString().equals("Grita")) {
             this.msg += "<b><u> GRITA: </u></b>";
             this.msg += "<font color='red' size='+1'>" + textoHtml(txtMensagem.getText(), true) + "</font>";
             emojiSize += 8;
-        } else if(cbModo.getSelectedItem().toString().equals("Xinga")){
+        } else if (cbModo.getSelectedItem().toString().equals("Xinga")) {
             this.msg += "<b><u><i><font color='red'> Xinga: </font></i></u></b>";
             this.msg += "<b><font color='red' size='+4'>" + textoHtml(txtMensagem.getText(), true) + "!!!!!</font></b>";
             emojiSize += 12;
         }
 
         if (figuraSelecionada != null) {
-            URL figura = Util.class.getResource(
-                    "/images/" + figuraSelecionada + ".png");
+            URL figura = Util.imagem(figuraSelecionada + ".png");
 
             if (figura != null) {
-                this.msg += " <img src='chatimg:" + figuraSelecionada + ".png"
+                this.msg += " <img src='" + figura.toExternalForm()
                         + "' width='" + emojiSize
                         + "' height='" + emojiSize + "'>";
             }
@@ -164,7 +164,7 @@ public class FrmChat extends JFrame {
         this.msg += "<br>";
 
         try (Socket cliente = new Socket()) {
-            cliente.connect(new InetSocketAddress(Util.serverIpAddress, 6662), 2000);
+            cliente.connect(new InetSocketAddress(Util.serverIpAddress, Util.portaEnvioMiddleware), 2000);
             try (ObjectOutputStream output = new ObjectOutputStream(cliente.getOutputStream())) {
                 output.writeUTF(this.msg);
                 output.flush();
@@ -172,24 +172,30 @@ public class FrmChat extends JFrame {
             txtMensagem.setText("");
             figuraSelecionada = null;
         } catch (IOException e) {
+            Telemetria.erro("FrmChat:gerarEEnviarMsg", e);
             JOptionPane.showMessageDialog(this,
                     "Não foi possível enviar a mensagem. O servidor pode estar em manutenção. Tente novamente.",
                     "Envio indisponível", JOptionPane.ERROR_MESSAGE);
         }
     }
 
+
     public FrmChat() {
         panelChat.setBorder(BorderFactory.createTitledBorder("Chat"));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(panelChat);
         configurarSeletor();
+        btnProvocarErro.addActionListener(e -> Telemetria.erro("FrmChat:demonstrarErro",
+                new IllegalStateException("Erro desktop de demonstração")));
         setVisible(true);
 
+        // Virtual Thread para consultas com socket bloqueante; a EDT permanece
+        // exclusiva para desenho/eventos e não é usada para esperar o middleware.
         Thread.ofVirtual().start(() -> {
             String historico = "";
-            while (true) {
+            while (isDisplayable()) {
                 try (Socket cliente = new Socket()) {
-                    cliente.connect(new InetSocketAddress(Util.serverIpAddress, 6661), 2000);
+                    cliente.connect(new InetSocketAddress(Util.serverIpAddress, Util.portaConsultaMiddleware), 2000);
                     cliente.setSoTimeout(2000);
                     try (ObjectInputStream input = new ObjectInputStream(cliente.getInputStream())) {
                         historico = localizarImagens(input.readUTF());
@@ -202,6 +208,7 @@ public class FrmChat extends JFrame {
                     emManutencao = false;
                 } catch (IOException e) {
                     if (!emManutencao) {
+                        Telemetria.erro("FrmChat:receberMensagens", e);
                         String mensagens = historico;
                         SwingUtilities.invokeLater(() ->
                                 edtConversa.setText("<html>" + mensagens + "<center><b>Em manutenção...</b></center></html>"));
@@ -227,7 +234,7 @@ public class FrmChat extends JFrame {
         txtMensagem.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     gerarEEnviarMsg();
                 }
             }

@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class FrmLogin extends JFrame {
@@ -62,16 +63,16 @@ public class FrmLogin extends JFrame {
         txtNick.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     enviarLogin();
                 }
             }
         });
     }
 
-    public void enviarLogin(){
-        Util.nickname =  txtNick.getText().trim();
-        if(!Util.nickname.isEmpty()) {
+    public void enviarLogin() {
+        Util.nickname = txtNick.getText().trim();
+        if (!Util.nickname.isEmpty()) {
             Util.nickname = Util.nickname.substring(0, 1).toUpperCase() + Util.nickname.substring(1);
             if (radAzul.isSelected()) {
                 Util.cor = "blue";

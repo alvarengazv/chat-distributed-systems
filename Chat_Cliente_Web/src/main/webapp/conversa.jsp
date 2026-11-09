@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.util.*" %>
-<%@ page import="java.net.Socket" %>
-<%@ page import="java.io.ObjectOutputStream" %>
+<%@ page import="com.mycompany.chat_cliente_web.InterfaceMiddlewareWeb" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,7 +12,13 @@
         input, select, button { box-sizing: border-box; height: 34px; border: 1px solid #b9b1ac; border-radius: 5px; background: white; font: inherit; }
         input { width: 255px; max-width: 100%; padding: 0 8px; }
         select, button { padding: 0 10px; }
-        .acoes { flex-basis: 100%; text-align: center; }
+        .acoes { text-align: center; }
+        input[type=text] { flex: 1; min-width: 120px; }
+        details { position: relative; }
+        details[open] { flex-basis: 100%; }
+        details button { padding:4px; }
+        #figurinhas { margin-top:8px; }
+        [role=status]:empty { display:none; }
     </style>
 </head>
 <body>
@@ -33,13 +38,22 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String texto = request.getParameter("txtMensagem");
-    if (request.getParameter("btnEnviar") != null && texto != null && !texto.trim().isEmpty()) {
+    boolean enviada = false;
+    String aviso = "";
+    if (request.getParameter("btnErro") != null) {
+        try { throw new IllegalStateException("Erro Web provocado para demonstração"); }
+        catch (Exception erro) { InterfaceMiddlewareWeb.registrar(request.getRemoteHost(), "conversa:demonstrarErro", erro); aviso = "Erro de demonstração encaminhado ao coletor."; }
+    }
+    String figura = request.getParameter("figura");
+    boolean temFigura = Arrays.asList("coracao", "beijo", "dinheiro", "homem", "menina", "sinal-de-interrogacao").contains(figura);
+    if (request.getParameter("btnEnviar") != null && ((texto != null && !texto.trim().isEmpty()) || temFigura)) {
+        if (texto == null) texto = "";
         String nome = (String) session.getAttribute("nickname");
         String cor = (String) session.getAttribute("cor");
         String avatar = (String) session.getAttribute("avatar");
 
-        if (!Arrays.asList("navy", "red", "black").contains(cor)) cor = "black";
-        if (!Arrays.asList("manIcon.png", "woman.png", "neutralIcon.png").contains(avatar)) avatar = "neutralIcon.png";
+        if (!Arrays.asList("blue", "navy", "red", "black").contains(cor)) cor = "black";
+        if (!Arrays.asList("homem.png", "menina.png", "sinal-de-interrogacao.png", "manIcon.png", "woman.png", "neutralIcon.png").contains(avatar)) avatar = "neutralIcon.png";
 
         String modo = request.getParameter("cbModo");
         String conteudo;
@@ -50,68 +64,79 @@
         } else {
             conteudo = " <b>Fala:</b> " + textoHtml(texto, false);
         }
-        String linha = "<div><img src=\"images/" + avatar + "\" width=\"29\" height=\"32\" alt=\"\"> "
+        if (temFigura) {
+            int tamanhoFigura = "Xinga".equals(modo) ? 28 : "Grita".equals(modo) ? 24 : 16;
+            conteudo += " <img src=\"" + escapar(InterfaceMiddlewareWeb.imagem(figura + ".png"))
+                    + "\" width=\"" + tamanhoFigura + "\" height=\"" + tamanhoFigura + "\" alt=\"\">";
+        }
+        String linha = "<div><img src=\"" + escapar(InterfaceMiddlewareWeb.imagem(avatar)) + "\" width=\"20\" height=\"20\" alt=\"\"> "
                 + "<span style=\"color:" + cor + "\"><b>" + escapar(nome) + "</b></span>"
                 + conteudo + "</div>";
 
-        Socket client = new Socket("127.0.0.1", 6662);
-        ObjectOutputStream writer = new ObjectOutputStream(client.getOutputStream());
-        writer.flush();
-        writer.writeUTF(linha);
-        writer.close();
-        client.close();
+        try {
+            InterfaceMiddlewareWeb.enviar(linha);
+            enviada = true;
+        } catch (java.io.IOException erro) {
+            InterfaceMiddlewareWeb.registrar(request.getRemoteHost(), "conversa:enviar", erro);
+            aviso = "Não foi possível enviar. O serviço Web pode estar em manutenção.";
+        }
 
 
     }
 %>
+<p role="status"><%= escapar(aviso) %></p>
 <form id="frmConversa" name="frmConversa" method="post" action="conversa.jsp">
     <label for="txtMensagem">Mensagem:</label>
-    <input id="txtMensagem" type="text" name="txtMensagem" size="200" maxlength="150">
+    <input id="txtMensagem" type="text" name="txtMensagem" size="200" maxlength="150" value="<%= enviada ? "" : escapar(texto) %>">
     <label for="cbModo">Modo:</label>
     <select id="cbModo" name="cbModo">
         <option>Fala</option><option>Grita</option><option>Xinga</option>
     </select>
-    <label for="cbEmoji">Emoji:</label>
-    <select id="cbEmoji" name="cbEmoji" aria-label="Adicionar emoji">
-        <option value="">Selecione</option>
-        <option>😀</option><option>😁</option><option>😂</option><option>😊</option>
-        <option>😍</option><option>😘</option><option>😎</option><option>😮</option>
-        <option>😢</option><option>😭</option><option>😡</option><option>👍</option>
-        <option>👎</option><option>❤️</option>
-    </select>
-    <div class="acoes"><input type="submit" name="btnEnviar" value="Enviar"></div>
+    <input type="hidden" name="figura" value="">
+    <details><summary>☺ Emojis / Figurinhas</summary>
+        <div aria-label="Emojis">
+        <% for (String emoji : new String[]{"😀", "😁", "😂", "😊", "😍", "😘", "😎", "😮", "😢", "😭", "😡", "👍", "👎", "❤️"}) { %>
+            <button type="button" data-emoji="<%= emoji %>"><%= emoji %></button>
+        <% } %>
+        </div>
+        <div id="figurinhas">
+        <% for (String nomeFigura : new String[]{"coracao", "beijo", "dinheiro", "homem", "menina", "sinal-de-interrogacao"}) { %>
+            <button type="button" data-figura="<%= nomeFigura %>" title="<%= nomeFigura %>"><img src="<%= InterfaceMiddlewareWeb.imagem(nomeFigura + ".png") %>" width="24" height="24" alt="<%= nomeFigura %>"></button>
+        <% } %>
+        </div>
+    </details>
+    <div class="acoes"><input type="submit" name="btnEnviar" value="Enviar">
+        <button type="submit" name="btnErro" value="1">Demonstrar erro</button></div>
 </form>
 <script>
-    <% if (request.getParameter("btnEnviar") != null && texto != null && !texto.trim().isEmpty()) { %>
+    <% if (enviada) { %>
     setTimeout(() => {
         if (parent.frames.quadroMensagens) parent.frames.quadroMensagens.location.reload();
     }, 500);
     <% } %>
     const formulario = document.forms.frmConversa;
     const txtMensagem = formulario.elements.txtMensagem;
-    const cbEmoji = formulario.elements.cbEmoji;
-
-    cbEmoji.addEventListener('change', function () {
-        if (!this.value) return;
-
-        txtMensagem.setRangeText(
-            this.value,
-            txtMensagem.selectionStart,
-            txtMensagem.selectionEnd,
-            'end'
-        );
-
-        this.value = '';
-        txtMensagem.focus();
+    document.querySelectorAll('[data-emoji]').forEach(botao => {
+        botao.addEventListener('click', () => {
+            txtMensagem.setRangeText(botao.dataset.emoji, txtMensagem.selectionStart, txtMensagem.selectionEnd, 'end');
+            txtMensagem.focus();
+        });
     });
 
+    document.querySelectorAll('[data-figura]').forEach(botao => {
+        botao.addEventListener('click', () => {
+            formulario.elements.figura.value = botao.dataset.figura;
+            formulario.requestSubmit(formulario.elements.btnEnviar);
+        });
+    });
     formulario.addEventListener('submit', function (event) {
-        if (!txtMensagem.value.trim()) {
+        if (event.submitter && event.submitter.name === 'btnErro') return;
+        if (!txtMensagem.value.trim() && !formulario.elements.figura.value) {
             event.preventDefault();
             txtMensagem.focus();
             return;
         }
-        setTimeout(() => { txtMensagem.value = ''; }, 0);
+
     });
 </script>
 </body>

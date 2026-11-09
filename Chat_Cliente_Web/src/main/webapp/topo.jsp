@@ -1,3 +1,4 @@
+<%@ page import="com.mycompany.chat_cliente_web.InterfaceMiddlewareWeb" %>
 <%--
   Created by IntelliJ IDEA.
   User: alvarengazv
@@ -16,12 +17,12 @@
 //                "<b>Cor:</b>" + session.getAttribute("cor") + "<br>" +
 //                "<b>Avatar:</b>" + session.getAttribute("avatar"));
     %>
-<%--    <img src="images/neutralIcon.png" width="58" height="64">--%>
+<%--    <img src="<%= InterfaceMiddlewareWeb.escapar(InterfaceMiddlewareWeb.imagem("neutralIcon.png")) %>" width="20" height="20">--%>
     <%
 //        out.print("<img src=\"images/" + session.getAttribute("avatar") + "\"  width=\"58\" height=\"64\">")
     %>
-    <img alt="profilePic" src="images/<%=session.getAttribute("avatar")%>" width="58" height="64">
-    <span style='font-size: 144%; color: <%=session.getAttribute("cor")%>; '><b><%=session.getAttribute("nickname")%></b></span>
+    <img alt="Avatar" src="<%= InterfaceMiddlewareWeb.escapar(InterfaceMiddlewareWeb.imagem((String) session.getAttribute("avatar"))) %>" width="20" height="20">
+    <span style='font-size: 144%; color: <%=session.getAttribute("cor")%>; '><b><%= InterfaceMiddlewareWeb.escapar((String) session.getAttribute("nickname")) %></b></span>
 
 </body>
 </html>
